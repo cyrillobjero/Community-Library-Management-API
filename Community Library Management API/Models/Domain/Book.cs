@@ -1,6 +1,6 @@
 ﻿using Community_Library_Management_API.Models.Domain;
 
-namespace CommunityLibrary.Models.Domain
+namespace Community_Library_Management_API.Models.Domain
 {
     public class Book
     {
