@@ -1,6 +1,6 @@
 ﻿namespace Community_Library_Management_API.Repositories
 {
-    public class LoanService
+    public class LoanRepository
     {
     }
 }

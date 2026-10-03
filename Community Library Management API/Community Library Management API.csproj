@@ -23,12 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\Domain\" />
-    <Folder Include="DTO\" />
-    <Folder Include="Data\" />
-    <Folder Include="database\" />
-    <Folder Include="Repositories\" />
-    <Folder Include="Services\" />
+    <Folder Include="databse\" />
   </ItemGroup>
 
 </Project>
