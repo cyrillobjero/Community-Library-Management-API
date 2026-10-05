@@ -1,4 +1,4 @@
-﻿namespace Community_Library_Management_API.DTO.Books
+﻿namespace CommunityLibrary.DTO.Books
 {
     public class CreateBookDto
     {
@@ -7,9 +7,12 @@
         public string Author { get; set; } = string.Empty;
 
         public string ISBN { get; set; } = string.Empty;
+<<<<<<< HEAD
 
         public string Category { get; set; } = string.Empty;
 
         public int TotalCopies { get; set; }
+=======
+>>>>>>> origin/Jacob
     }
 }
