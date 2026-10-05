@@ -1,5 +1,6 @@
-﻿using Community_Library_Management_API.DTOs.Books;
-using Community_Library_Management_API.Services.Interfaces;
+﻿using CommunityLibrary.DTO.Books;
+using CommunityLibrary.DTOs.Books;
+using CommunityLibrary.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Community_Library_Management_API.Controllers

@@ -7,12 +7,9 @@
         public string Author { get; set; } = string.Empty;
 
         public string ISBN { get; set; } = string.Empty;
-<<<<<<< HEAD
 
         public string Category { get; set; } = string.Empty;
 
         public int TotalCopies { get; set; }
-=======
->>>>>>> origin/Jacob
     }
 }
