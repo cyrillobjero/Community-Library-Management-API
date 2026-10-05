@@ -1,7 +1,8 @@
-﻿using Community_Library_Management_API.DTO.Books;
-using Community_Library_Management_API.Models.Domain;
+﻿using Community_Library_Management_API.Models.Domain;
 using Community_Library_Management_API.Repositories.Interfaces;
-using Community_Library_Management_API.Services.Interfaces;
+using CommunityLibrary.DTO.Books;
+using CommunityLibrary.DTOs.Books;
+using CommunityLibrary.Services.Interfaces;
 
 namespace Community_Library_Management_API.Services
 {
@@ -14,21 +15,21 @@ namespace Community_Library_Management_API.Services
             _repository = repository;
         }
 
-        public async Task<IEnumerable<BookDto>> GetAllAsync()
+        public async Task<IEnumerable<CommunityLibrary.DTOs.Books.BookDto>> GetAllAsync()
         {
             var books = await _repository.GetAllAsync();
 
-            return books.Select(MapToDto);
+            return (IEnumerable<CommunityLibrary.DTOs.Books.BookDto>)books.Select(MapToDto);
         }
 
-        public async Task<BookDto?> GetByIdAsync(int id)
+        public async Task<CreateBookDto?> GetByIdAsync(int id)
         {
             var book = await _repository.GetByIdAsync(id);
 
             return book == null ? null : MapToDto(book);
         }
 
-        public async Task<BookDto> CreateAsync(CreateBookDto dto)
+        public async Task<CreateBookDto> CreateAsync(CreateBookDto dto)
         {
             ValidateBook(dto);
 
@@ -52,7 +53,7 @@ namespace Community_Library_Management_API.Services
             return MapToDto(book);
         }
 
-        public async Task<BookDto?> UpdateAsync(
+        public async Task<CreateBookDto?> UpdateAsync(
             int id, CreateBookDto dto)
         {
             ValidateBook(dto);
@@ -106,9 +107,9 @@ namespace Community_Library_Management_API.Services
                 throw new ArgumentException("ISBN is required.");
         }
 
-        private static BookDto MapToDto(Book book)
+        private static CreateBookDto MapToDto(Book book)
         {
-            return new BookDto
+            return new CreateBookDto
             {
                 Id = book.Id,
                 Title = book.Title,
@@ -116,6 +117,31 @@ namespace Community_Library_Management_API.Services
                 ISBN = book.ISBN,
                 IsAvailable = book.IsAvailable
             };
+        }
+
+        Task<IEnumerable<BookDto>> IBookService.GetAllAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<BookDto?> IBookService.GetByIdAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<BookDto> IBookService.CreateAsync(CreateBookDto dto)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<BookDto?> IBookService.UpdateAsync(int id, CreateBookDto dto)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<bool> IBookService.DeleteAsync(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using Community_Library_Management_API.DTO.Loans;
+﻿using Community_Library_Management_API.DTOs.Loans;
 using Community_Library_Management_API.Models.Domain;
 using Community_Library_Management_API.Repositories.Interfaces;
 using Community_Library_Management_API.Services.Interfaces;

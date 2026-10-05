@@ -11,5 +11,7 @@
         public string Category { get; set; } = string.Empty;
 
         public int TotalCopies { get; set; }
+        public bool IsAvailable { get; internal set; }
+        public int Id { get; internal set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿using Community_Library_Management_API.DTO.Loans;
+﻿using Community_Library_Management_API.DTOs.Loans;
 using Community_Library_Management_API.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -29,12 +29,16 @@ namespace Community_Library_Management_API.Controllers
             if (loan == null)
                 return NotFound("Loan not found.");
 
-            return Ok(loan);
+            return Ok();
+        }
+
+        private ActionResult<LoanDto> Ok(LoanDto? loan)
+        {
+            throw new NotImplementedException();
         }
 
         [HttpPost]
-        public async Task<ActionResult<LoanDto>> Create(
-            CreateLoanDto dto)
+        public async Task<ActionResult<LoanDto>> Create(CreateLoanDto dto)
         {
             try
             {
@@ -60,16 +64,11 @@ namespace Community_Library_Management_API.Controllers
         }
 
         [HttpPost("{id:int}/return")]
-        public async Task<ActionResult<LoanDto>> Return(
-            int id,
-            ReturnLoanDto? dto)
+        public async Task<ActionResult<LoanDto>> Return(int id)
         {
             try
             {
                 var loan = await _service.ReturnAsync(id);
-
-                if (loan == null)
-                    return NotFound("Loan not found.");
 
                 return Ok(loan);
             }
@@ -85,7 +84,7 @@ namespace Community_Library_Management_API.Controllers
 
         [HttpGet("/api/members/{memberId:int}/loans")]
         public async Task<ActionResult<IEnumerable<LoanDto>>>
-            GetMemberLoans(int memberId)
+                GetMemberLoans(int memberId)
         {
             try
             {
@@ -99,5 +98,6 @@ namespace Community_Library_Management_API.Controllers
                 return NotFound(ex.Message);
             }
         }
+
     }
 }

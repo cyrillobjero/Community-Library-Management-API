@@ -1,5 +1,5 @@
 ﻿using Community_Library_Management_API.Data;
-using Community_Library_Management_API.Models;
+using Community_Library_Management_API.Models.Domain;
 using Community_Library_Management_API.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
@@ -51,6 +51,16 @@ namespace Community_Library_Management_API.Repositories
         public async Task SaveChangesAsync()
         {
             await _context.SaveChangesAsync();
+        }
+
+        Task<IEnumerable<Book>> IBookRepository.GetAllAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<Book?> IBookRepository.GetByIdAsync(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

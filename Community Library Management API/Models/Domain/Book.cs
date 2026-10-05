@@ -4,6 +4,8 @@ namespace Community_Library_Management_API.Models.Domain
 {
     public class Book
     {
+        internal int TotalCopies;
+
         public int Id { get; set; }
 
         public string Title { get; set; } = string.Empty;
@@ -15,5 +17,6 @@ namespace Community_Library_Management_API.Models.Domain
         public bool IsAvailable { get; set; } = true;
 
         public List<Loan> Loans { get; set; } = new();
+        public int AvailableCopies { get; internal set; }
     }
 }
