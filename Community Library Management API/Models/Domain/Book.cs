@@ -17,6 +17,5 @@
         public int AvailableCopies { get; set; }
 
         public List<Loan> Loans { get; set; } = new();
-        public bool IsAvailable { get; internal set; }
     }
 }

@@ -1,5 +1,5 @@
 ﻿using Community_Library_Management_API.Data;
-using Community_Library_Management_API.Models;
+using Community_Library_Management_API.Models.Domain;
 using Community_Library_Management_API.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
@@ -24,6 +24,7 @@ namespace Community_Library_Management_API.Repositories
         public async Task<Book?> GetByIdAsync(int id)
         {
             return await _context.Books
+                .AsNoTracking()
                 .FirstOrDefaultAsync(b => b.Id == id);
         }
 
