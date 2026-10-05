@@ -22,8 +22,11 @@
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="9.0.6" />
   </ItemGroup>
 
+<<<<<<< Updated upstream
   <ItemGroup>
     <Folder Include="databse\" />
   </ItemGroup>
 
+=======
+>>>>>>> Stashed changes
 </Project>
