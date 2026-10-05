@@ -1,4 +1,4 @@
-﻿using Community_Library_Management_API.DTOs.Books;
+﻿using Community_Library_Management_API.DTO.Books;
 using Community_Library_Management_API.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 

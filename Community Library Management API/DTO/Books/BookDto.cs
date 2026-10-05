@@ -1,21 +1,20 @@
-﻿namespace CommunityLibrary.DTOs.Books
+﻿namespace Community_Library_Management_API.DTO.Books
 {
-    public class CreateBookDto
+    public class BookDto
     {
-<<<<<<< HEAD
         public int Id { get; set; }
 
-=======
->>>>>>> origin/Jacob
         public string Title { get; set; } = string.Empty;
 
         public string Author { get; set; } = string.Empty;
 
         public string ISBN { get; set; } = string.Empty;
-<<<<<<< HEAD
 
-        public bool IsAvailable { get; set; }
-=======
->>>>>>> origin/Jacob
+        public string Category { get; set; } = string.Empty;
+
+        public int TotalCopies { get; set; }
+
+        public int AvailableCopies { get; set; }
+        public bool IsAvailable { get; internal set; }
     }
 }
