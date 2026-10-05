@@ -19,10 +19,5 @@
         public DateTime? ReturnedDate { get; set; }
 
         public string Status { get; set; } = string.Empty;
-
-        public static implicit operator LoanDto?(LoanDto? v)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
