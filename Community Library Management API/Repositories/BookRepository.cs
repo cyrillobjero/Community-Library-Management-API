@@ -24,6 +24,7 @@ namespace Community_Library_Management_API.Repositories
         public async Task<Book?> GetByIdAsync(int id)
         {
             return await _context.Books
+                .AsNoTracking()
                 .FirstOrDefaultAsync(b => b.Id == id);
         }
 

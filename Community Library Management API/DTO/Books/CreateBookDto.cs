@@ -1,4 +1,4 @@
-﻿namespace CommunityLibrary.DTO.Books
+﻿namespace Community_Library_Management_API.DTO.Books
 {
     public class CreateBookDto
     {
@@ -11,7 +11,10 @@
         public string Category { get; set; } = string.Empty;
 
         public int TotalCopies { get; set; }
+<<<<<<< HEAD
         public bool IsAvailable { get; internal set; }
         public int Id { get; internal set; }
+=======
+>>>>>>> master
     }
 }
